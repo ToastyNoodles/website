@@ -1,34 +1,34 @@
 const clearColor = { r: 0.0, g: 0.0, b: 0.0, a: 1.0 };
 const vertices = new Float32Array([
-	-1.0, -1.0, 0.0, 0.0,
-	 1.0, -1.0, 1.0, 0.0,
-	 1.0,  1.0, 1.0, 1.0,
-	 1.0,  1.0, 1.0, 1.0,
-	-1.0,  1.0, 0.0, 1.0,
-	-1.0, -1.0, 0.0, 0.0
+	-1.0, -1.0, 0.0, 0.0, 0.0, 0.0,
+	 1.0, -1.0, 0.0, 0.0, 1.0, 0.0,
+	 1.0,  1.0, 0.0, 0.0, 1.0, 1.0,
+	 1.0,  1.0, 0.0, 0.0, 1.0, 1.0,
+	-1.0,  1.0, 0.0, 0.0, 0.0, 1.0,
+	-1.0, -1.0, 0.0, 0.0, 0.0, 0.0
 ]);
 
 const shaders = 
 `
-struct VertexOut {
-	@builtin(position) position : vec2f,
-	@location(0) texCoord : vec2f,
-}
-
-@vertex
-fn vertex_main(@location(0) position : vec2f, @location(1) texCoord: vec2f) -> VertexOut
-{
+	struct VertexOut {
+		@builtin(position) position : vec4f,
+		@location(0) texCoord : vec2f
+	}
+  
+  @vertex
+  fn vertex_main(@location(0) position: vec4f, @location(1) texCoord: vec2f) -> VertexOut
+  {
 	var output : VertexOut;
 	output.position = position;
 	output.texCoord = texCoord;
 	return output;
-}
-
-@fragment
-fn fragment_main(fragData: VertexOut) -> @location(0) vec2f
-{
-	return vec4f(0.1, 0.0, 0.0, 1.0);
-}
+  }
+  
+  @fragment
+  fn fragment_main(fragData: VertexOut) -> @location(0) vec2f
+  {
+	return vec4f(fragData.texCoord, 0.0, 1.0);
+  }
 `;
 
 async function init()
@@ -70,13 +70,13 @@ async function init()
 		attributes: [{
 			shaderLocation: 0,
 			offset: 0,
-			format: 'float32x2'
+			format: 'float32x4'
 		}, {
 			shaderLocation: 1,
-			offset: 8,
+			offset: 16,
 			format: 'float32x2'
 		}],
-		arrayStride: 32,
+		arrayStride: 24,
 		stepMode: 'vertex'
 	}];
 
