@@ -122,4 +122,4 @@ async function init()
 	device.queue.submit([commandEncoder.finish()]);
 }
 
-init();
+window.onload = init;
