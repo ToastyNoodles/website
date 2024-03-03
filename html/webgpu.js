@@ -27,7 +27,7 @@ const shaders =
   @fragment
   fn fragment_main(fragData: VertexOut) -> @location(0) vec2f
   {
-	return vec4f(fragData.texCoord, 0.0, 1.0);
+	return vec4f(fragData.texCoord.xy, 0.0, 1.0);
   }
 `;
 
