@@ -50,7 +50,7 @@ async function init()
 		code: shaders
 	});
 
-	const canvas = document.querySelector('#gpuCanvas');
+	const canvas = document.getElementById('canvas');
 	const context = canvas.getContext('webgpu');
 
 	context.configure({
@@ -122,4 +122,4 @@ async function init()
 	device.queue.submit([commandEncoder.finish()]);
 }
 
-window.onload = init;
+init();
