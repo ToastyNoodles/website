@@ -29,7 +29,7 @@ fn fragment_main(fragData: VertexOut) -> @location(0) vec2f
 {
 	return fragData
 }
-`
+`;
 
 async function init()
 {
