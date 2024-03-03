@@ -27,7 +27,7 @@ fn vertex_main(@location(0) position : vec2f, @location(1) texCoord: vec2f) -> V
 @fragment
 fn fragment_main(fragData: VertexOut) -> @location(0) vec2f
 {
-	return fragData
+	return vec4f(0.1, 0.0, 0.0, 1.0);
 }
 `;
 
