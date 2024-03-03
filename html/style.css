@@ -1,0 +1,16 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    color: white;
+}
+
+#canvas {
+    border-radius: 15px;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+}
