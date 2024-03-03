@@ -1,5 +1,6 @@
 body {
     background-color: black;
+    font: italic bold 1.2em "Poppins", system-ui;
 }
 
 h1 {
