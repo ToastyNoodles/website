@@ -135,7 +135,7 @@ async function init() {
 
   passEncoder.setPipeline(renderPipeline);
   passEncoder.setVertexBuffer(0, vertexBuffer);
-  passEncoder.draw(3);
+  passEncoder.draw(6);
 
   // End the render pass
   passEncoder.end();
