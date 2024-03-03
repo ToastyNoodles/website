@@ -12,7 +12,7 @@ const shaders =
 `
 struct VertexOut {
 	@builtin(position) position : vec2f,
-	@location(0) texCoord : vec2f
+	@location(0) texCoord : vec2f,
 }
 
 @vertex
