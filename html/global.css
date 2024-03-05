@@ -1,6 +1,7 @@
 body {
     background-color: #252525;
     font: bold 1.2em "Poppins", system-ui;
+    overflow-x: hidden;
     padding: 0;
     margin: 0;
 }
@@ -16,9 +17,8 @@ body {
 }
 
 .color_bar {
-    position: relative;
     height: 16px;
-    background: linear-gradient(141deg, cyan 0%, rebeccapurple 50%, orange 100%);
+    background: linear-gradient(137deg, cyan 0%, magenta 50%, orange 100%);
 }
 
 h1 {
