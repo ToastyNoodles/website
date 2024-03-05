@@ -1,0 +1,65 @@
+body {
+    background-color: #252525;
+    font: bold 1.2em "Poppins", system-ui;
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    background-color: #1A1A1A;
+    color: white;
+    font-size: 36px;
+    padding: 0px 32px;
+    display: flex;
+    align-items: center;
+    transition: .5s ease-in-out;
+}
+
+.color_bar {
+    position: relative;
+    height: 16px;
+    background: linear-gradient(141deg, cyan 0%, rebeccapurple 50%, orange 100%);
+}
+
+h1 {
+    cursor: default;
+    font-size: 36px;
+    margin: 0;
+}
+
+ul {
+    margin-left: auto;
+    font-size: 24px;
+    padding: 0;
+}
+
+ul a {
+    color: inherit;
+    text-decoration: none;
+    padding: 0px 12px;
+    cursor: pointer;
+}
+
+ul a:hover {
+    transition: .25s ease-in-out;
+    color: orange;
+}
+
+.content_container {
+    color: white;
+    height: 40em;
+    padding: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+.home {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.showoff {
+    align-self: center;
+}
