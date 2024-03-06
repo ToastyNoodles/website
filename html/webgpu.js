@@ -30,10 +30,19 @@ fn vertex_main(@location(0) position: vec4f, @location(1) color: vec4f) -> Verte
   return output;
 }
 
+fn random (st : vec2f) -> f32 {
+  return fract(sin(dot(st.xy, vec2f(12.9898,78.233)))* 43758.5453123);
+}
+
 @fragment
 fn fragment_main(fragData: VertexOut) -> @location(0) vec4f
 {
-  return fragData.color;
+  var uv = vec2f(fragData.color.xy) * 10.0;
+  var iPos = floor(uv);
+  var fPos = fract(uv);
+  var color = vec3f(random(iPos));
+
+  return vec4f(color, 1.0);
 }
 `;
 
